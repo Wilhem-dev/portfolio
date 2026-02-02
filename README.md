@@ -29,10 +29,4 @@ npm start
 
 Les sources se trouvent dans le dossier `src/` avec des composants dans `src/components/`.
 
-## Contact
 
-Pour toute question : ajoutez votre email ou lien ici.
-
----
-
-Fichier mis à jour automatiquement pour fournir un README simple.

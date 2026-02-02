@@ -1,0 +1,91 @@
+/* Section principale */
+.projects-section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Titre */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #111827; /* gris foncé */
+}
+
+/* Carte projet */
+.project-card {
+  background: linear-gradient(145deg, #ffffff, #f9fafb);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet hover */
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Titre projet */
+.project-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #2563eb; /* bleu moderne */
+}
+
+/* Texte */
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* Mots clés en gras */
+.project-card strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* Dates */
+.project-card em {
+  color: #6b7280;
+  font-style: normal;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+}
+/* Bouton lien */
+.project-button {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.7rem 1.6rem;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Hover bouton */
+.project-button:hover {
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}

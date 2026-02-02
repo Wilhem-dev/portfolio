@@ -1,0 +1,106 @@
+.passion-section {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #111827;
+}
+
+.cards-container-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.passion-card {
+  background: linear-gradient(145deg, #ffffff, #f9fafb);
+  border-radius: 16px;
+  padding: 2.5rem 1.8rem; /* card plus longue */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.passion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+}
+
+.passion-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #2563eb;
+  text-align: center;
+}
+
+.passion-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #374151;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Click indicator */
+.click-indicator {
+  text-align: center;
+  font-weight: 600;
+  color: #2563eb;
+  margin-top: 0.5rem;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* Image et carte */
+.passion-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin-top: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.map-container {
+  height: 400px;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .map-container {
+    height: 300px;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .passion-card h3 {
+    font-size: 1.3rem;
+  }
+  .passion-card p {
+    font-size: 1rem;
+  }
+}

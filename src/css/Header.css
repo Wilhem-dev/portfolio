@@ -1,0 +1,468 @@
+/* Header.css - Version avec texte plus grand */
+
+/* Variables CSS */
+:root {
+  --primary-color: #1a1a2e;
+  --secondary-color: #0f3460;
+  --accent-color: #e94560;
+  --text-primary: #ffffff;
+  --text-secondary: #b8c1ec;
+  --gradient-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+/* Styles de base pour le header */
+.site-header {
+  background: var(--gradient-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0;
+}
+
+/* Effets de fond animés */
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(233, 69, 96, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(15, 52, 96, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(184, 193, 236, 0.05) 0%, transparent 50%);
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, 30px);
+  }
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section texte - TAILLES AUGMENTÉES */
+.header-text {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Titre principal - PLUS GRAND */
+.header-text h1 {
+  font-size: 4.5rem; /* Augmenté de 3.5rem */
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  background: linear-gradient(45deg, var(--text-primary), var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+/* Sous-titre - PLUS GRAND */
+.header-text h2 {
+  font-size: 2.4rem; /* Augmenté de 1.8rem */
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.header-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* Paragraphe - PLUS GRAND */
+.header-text p {
+  font-size: 1.4rem; /* Augmenté de 1.1rem */
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 650px;
+  font-weight: 400;
+}
+
+/* CTA Button - PLUS GRAND */
+.cta-button {
+  display: inline-block;
+  padding: 1.2rem 3rem; /* Augmenté */
+  background: linear-gradient(45deg, var(--accent-color), #ff6b8b);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700; /* Plus gras */
+  font-size: 1.3rem; /* Augmenté de 1.1rem */
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(45deg, var(--secondary-color), #2a5c97);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(233, 69, 96, 0.4);
+}
+
+.cta-button:hover::before {
+  width: 100%;
+}
+
+/* Section photo - PLUS GRANDE */
+.header-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.header-photo img {
+  width: 350px; /* Augmenté de 300px */
+  height: 350px; /* Augmenté de 300px */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--accent-color); /* Bordure plus épaisse */
+  box-shadow: 
+    var(--shadow),
+    0 0 0 15px rgba(233, 69, 96, 0.1),
+    0 0 0 30px rgba(233, 69, 96, 0.05);
+  transition: var(--transition);
+  position: relative;
+}
+
+.header-photo img:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.5),
+    0 0 0 15px rgba(233, 69, 96, 0.2),
+    0 0 0 30px rgba(233, 69, 96, 0.1);
+}
+
+/* Badge EFREI - PLUS GRAND */
+.efrei-badge {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background: var(--secondary-color);
+  color: white;
+  padding: 1rem 2rem; /* Augmenté */
+  border-radius: 30px;
+  font-size: 1.1rem; /* Augmenté de 0.9rem */
+  font-weight: 600; /* Plus gras */
+  box-shadow: var(--shadow);
+  animation: pulse 2s infinite;
+  letter-spacing: 0.3px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Social Links - PLUS GRANDS */
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Augmenté de 50px */
+  height: 60px; /* Augmenté de 50px */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 1.5rem; /* Augmenté de 1.2rem */
+}
+
+.social-links a:hover {
+  background: var(--accent-color);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(233, 69, 96, 0.4);
+}
+
+/* Scroll indicator - PLUS GRAND */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+  font-size: 1.1rem; /* Augmenté de 0.9rem */
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.mouse {
+  width: 35px; /* Augmenté de 30px */
+  height: 60px; /* Augmenté de 50px */
+  border: 3px solid var(--text-secondary);
+  border-radius: 20px;
+  position: relative;
+}
+
+.wheel {
+  width: 5px;
+  height: 12px;
+  background: var(--accent-color);
+  border-radius: 2px;
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(25px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-15px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-7px);
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design ajusté pour les tailles augmentées */
+@media (max-width: 1200px) {
+  .header-text h1 {
+    font-size: 4rem;
+  }
+  
+  .header-text h2 {
+    font-size: 2rem;
+  }
+  
+  .header-text p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-content {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  
+  .header-text h1 {
+    font-size: 3.5rem;
+  }
+  
+  .header-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .header-text h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .header-photo {
+    order: -1;
+  }
+  
+  .header-photo img {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .cta-button {
+    font-size: 1.2rem;
+    padding: 1.1rem 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    min-height: auto;
+    padding: 7rem 0 5rem;
+  }
+  
+  .header-content {
+    padding: 0 1.5rem;
+    gap: 3rem;
+  }
+  
+  .header-text h1 {
+    font-size: 2.8rem;
+  }
+  
+  .header-text h2 {
+    font-size: 1.6rem;
+  }
+  
+  .header-text p {
+    font-size: 1.2rem;
+  }
+  
+  .header-photo img {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .cta-button {
+    padding: 1rem 2.2rem;
+    font-size: 1.1rem;
+  }
+  
+  .efrei-badge {
+    font-size: 1rem;
+    padding: 0.9rem 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-content {
+    padding: 0 1rem;
+    gap: 2.5rem;
+  }
+  
+  .header-text h1 {
+    font-size: 2.4rem;
+  }
+  
+  .header-text h2 {
+    font-size: 1.4rem;
+  }
+  
+  .header-text p {
+    font-size: 1.1rem;
+  }
+  
+  .header-photo img {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .cta-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .social-links a {
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+  }
+  
+  .efrei-badge {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-text h1 {
+    font-size: 2rem;
+  }
+  
+  .header-text h2 {
+    font-size: 1.3rem;
+  }
+  
+  .header-text p {
+    font-size: 1rem;
+  }
+  
+  .header-photo img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .cta-button {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+  }
+  
+  .scroll-indicator {
+    font-size: 1rem;
+  }
+}

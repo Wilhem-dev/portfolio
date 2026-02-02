@@ -1,0 +1,201 @@
+/* Navbar.css */
+
+/* Variables CSS pour une gestion facile des couleurs et tailles */
+:root {
+  --primary-color: #1a1a2e;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Styles de base pour la navbar */
+.navbar {
+  background-color: #1a1a2e;
+  color: var(--light-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+/* Style du logo/brand */
+.brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--light-color);
+  text-decoration: none;
+  transition: var(--transition);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.brand:hover {
+  color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: var(--light-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--secondary-color);
+}
+
+/* Effet de soulignement au survol */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Style pour le lien actif (ajoutez une classe 'active' dynamiquement en React) */
+.nav-links a.active {
+  color: var(--secondary-color);
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Bouton hamburger pour mobile (caché par défaut) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--light-color);
+  transition: var(--transition);
+  border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    box-shadow: var(--shadow);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  /* Animation du hamburger en croix */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
+/* Animation pour le défilement de la navbar */
+.navbar.scrolled {
+  background-color: #1a1a2ed5
+}
+
+/* Support pour les préférences de réduction de mouvement */
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .brand,
+  .nav-links a,
+  .nav-links a::after {
+    transition: none;
+  }
+}
+
+/* Ajustements pour les très petits écrans */
+@media (max-width: 480px) {
+  .brand {
+    font-size: 1.5rem;
+  }
+  
+  .navbar-container {
+    height: 60px;
+  }
+}

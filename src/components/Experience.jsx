@@ -5,8 +5,6 @@ import {
   FaCalendarAlt,
   FaBuilding,
   FaMapMarkerAlt,
-  FaCode,
-  FaLeaf,
   FaMotorcycle,
   FaShoppingBag,
   FaBug,
